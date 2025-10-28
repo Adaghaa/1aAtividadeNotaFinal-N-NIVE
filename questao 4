@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculando IMC!</title>
+	</head>
+
+	<style>
+		body {
+			padding-top: 300px;
+			background-color: gray;
+			display:flex;
+			justify-content:center;
+		}
+		
+		#emvolta {
+			border: solid white;
+			padding: 30px;
+			background-color: black;
+			color: white;
+			text-align:center;
+		}
+	</style>
+
+	<body>
+		<div id="emvolta">
+		<h1>Cálculo de IMC!</h1>
+		<br>
+		<h2> Coloque sua Altura:
+		<br>
+		<input style="margin-bottom:10px; text-align: center; color: red;" id="altura" placeholder="ex:1.60">
+		<br>
+		<h2> Coloque seu Peso:
+		<br>
+		<input style="margin-bottom:20px; text-align: center; color: red;" id="peso" placeholder="ex:63">
+		<br>
+		<button style="color: purple;" onclick="calcular()">Calcular</button>
+		<br>
+		<p style="color: lime;" id="resultado"></p>
+		</div>
+		<script>
+			function calcular() {
+				let altura = document.getElementById("altura").value;
+				let peso = document.getElementById("peso").value;
+				document.getElementById("resultado").innerText = "IMC:  " + (peso / (altura * altura));
+			}
+		</script>
+	</body>
+</html>
