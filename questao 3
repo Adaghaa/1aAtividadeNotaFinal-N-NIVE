@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cor de fundo.</title>
+	</head>
+
+	<style>
+		body {
+			text-align: center;
+			padding-top: 400px;
+			background-color: gray;
+		}
+	</style>
+
+	<body>
+		<h2 id="titulo">Escolha cor de fundo!</h2>
+		<br>
+		<select onchange="mudeAgora(this.value)">
+		<option value="white">Claro</option>
+		<option value="black">Escuro</option>
+		<option value="#5c07bc">Roxo</option>
+		<option value="#3484ad">Azul</option>
+		<option value="#248f24">Verde</option>
+		</select>
+	
+		<script>
+			function mudeAgora(cor) {
+				document.body.style.backgroundColor = cor;
+				const texto = document.getElementById("titulo");
+				if (cor === "black" || cor === "#5c07bc") {
+					texto.style.color= "white";
+				} else {
+					texto.style.color="black";
+				}
+			}
+		</script>
+	</body>
+</html>
