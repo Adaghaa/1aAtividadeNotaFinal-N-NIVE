@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+	<style>
+		body {
+			background-image: url('nossa veio um monte um atras do outro.png');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin: 0;
+			height: 100vh;
+			font-family: "Comic Sans", sans-serif;
+			}
+
+		.borda {
+			border-left: 40px solid green;
+			border-right: 40px solid green;
+			border-top: 10px solid green;
+			border-bottom: 10px solid green;
+			border-image: linear-gradient(to bottom, #363636, #696969) 1 100%;
+			padding:20px;
+			height: 97vh;
+			box-sizing: border-box;
+			}
+		
+		.botao {
+			background-color: gray;
+			color:white;
+			padding:10px 20px;
+			text-align:center;
+			cursor: pointer;
+			transition: background-color 0.4s ease;
+			position: absolute;
+			top: 20%;
+			left: 10%;
+			transform: translate(-50%, -50%);
+			}
+		.botao:hover {
+			background-color:#45a049;
+		}
+		.botao:active {
+			background-color:#397039;
+		}
+		
+		#meclique {
+			background-color: #ff5f1f;
+			color:white;
+			box-shadow: 0 0 10px #ff5f1f, 0 0 20px #3ff5f1f, 0 0 30px #ff5f1f;
+			text-shadow: 0 0 5px white;
+			padding:10px 20px;
+			text-align:center;
+			cursor: pointer;
+			transition: background-color 0.4s ease;
+			position: absolute;
+			top: 20%;
+			left: 10%;
+			transform: translate(-50%, -50%);
+			transition: transform 1s ease-in-out;
+			}
+		#meclique:hover {
+			background-color:#45a049;
+		}
+		#meclique:active {
+			background-color:#397039;
+		}
+		.animar {
+			animation: Descendo 2.5s ease-in-out forwards;
+		}
+		.voltar {
+			animation: Voltando 2.5s ease-in-out forwards;
+		}
+	
+		@keyframes Descendo {
+			0% {
+				top: 20%;
+				left:10%;
+				transform: translate(-50%, -50%);
+				opacity: 1;
+			}
+			50% {
+				top:100%;
+				left: 10%;
+				transform: translate(-50%, 0);
+				opacity: 0;
+			}
+			51% {
+				top: -100px;
+				left: 90%;
+				transform: translate(-50%, 0);
+				opacity: 0;
+			}
+			100% {
+				top: 50%;
+				left: 90%;
+				transform: translate(-50%, -50%);
+				opacity: 1;
+			}
+		}
+
+		@keyframes Voltando {
+			0% {
+				top: 50%;
+				left:90%;
+				transform: translate(-50%, -50%);
+				opacity: 1;
+			}
+			50% {
+				top:100%;
+				left: 90%;
+				transform: translate(-50%, 0);
+				opacity: 0;
+			}
+			51% {
+				top: -100px;
+				left: 10%;
+				transform: translate(-50%, 0);
+				opacity: 0;
+			}
+			100% {
+				top: 20%;
+				left: 10%;
+				transform: translate(-50%, -50%);
+				opacity: 1;
+			}
+		}
+
+		.pixel-art {
+		display:grid;
+		grid-template-columns: repeat(13,20px);
+		grid-template-rows: repeat(13, 20px);
+		background-color:silver;
+		margin:auto;
+		border-radius: 15%;
+		border: 5px solid black;
+		width: 260px;
+		height: 260px;
+		overflow: hidden;
+		
+		}
+		.pixel {
+		width:20px;
+		height:20px;
+		background-color:white;
+		
+		}
+		.pixel.vermelho {background-color: red;}
+		.pixel.azul {background-color: #00BFFF;}
+		.pixel.verde {background-color: lime;}
+		.pixel.branco {background-color: white;}
+		.pixel.amarelo {background-color: yellow;}
+
+	</style>
+
+  </head>
+  <body>
+	<div class="borda">
+
+	<button id = "meclique">Me clique!</button>
+
+	<script>
+		const botao = document.getElementById("meclique");
+		botao.addEventListener("click", () => {
+			const direita = botao.style.left === "90%";
+			
+			if (direita) {
+				botao.classList.add("voltar");
+				botao.addEventListener("animationend", () => {
+					botao.style.top = "20%";
+					botao.style.left = "10%";
+					botao.style.transform = "translate(-50%, -50%)";
+					botao.classList.remove("voltar");
+				}, { once : true });
+			} else {
+				botao.classList.add("animar");
+				botao.addEventListener("animationend", () => {
+					botao.style.top = "50%";
+					botao.style.left = "90%";
+					botao.style.transform = "translate(-50%, -50%)";
+					botao.classList.remove("animar");
+				}, {once: true});
+			}
+		});
+	</script>
+
+	<div class="pixel-art">
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel branco"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>
+	<div class="pixel azul"></div>	<!-- uma linha, 13 pixels -->
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div> <!-- uma linha, 13 pixels -->
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel amarelo"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel amarelo"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel amarelo"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div> <!-- uma linha, 13 pixels -->
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel vermelho"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div> <!-- uma linha, 13 pixels -->
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div>
+	<div class="pixel verde"></div> <!-- uma linha, 13 pixels -->
+	</div>
+
+
+	
+	<h2 style="color: #29ff14; text-align: center;">Nínive Natal </h2>
+
+	<p style="color: #29ff14; border:silver; text-align: center;">202309146381</p>
+
+	<p style="color:black; text-align:center;">Analista de dados</p>
+
+	<br>
+
+	<p style="text-align:center; top: 60%; left: 50%; transform: translate(-50%, -50%) color:black !important;">Oi, me chamo Nínive e faço faculdade na Estácio de Sá, cursando Análise e Desenvolvimento de Sistemas.</p>
+
+	<p style="text-align:center; top: 70%; left: 50%; transform: translate(-50%, -50%) color:black !important;"> Atualmente focada em notas altas e boa exposição.</p>
+
+	<p><br><a href="https://l1nk.dev/74BOn" target="linkedin">
+		<button class="botao" style="background-color: #0077b5; color:white; padding:10px 20px; text-align:center; position: absolute; top:90%; left: 30%; transform: translate(-50%);">LinkedIn</button></p>
+
+	<p><br><a href="https://www.instagram.com/adaghaa/" target="instagram">
+		<button class="botao" style="background-color: #ee2a7b; color:white; padding:10px 20px; text-align:center; position: absolute; top:90%; left: 70%; transform: translate(-50%);">Instagram</button></p>
+	
+	
+      </div>
+  </body>
+</html>
