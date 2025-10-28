@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<title>Somando dois números.</title>
+	</head>
+
+	<style>
+		body {
+			text-align: center;
+			padding-top: 400px;
+			background-color: gray;
+		}
+	</style>
+
+	<body>
+		<h2>Coloque dois números!</h2>
+		<br>
+		<input style="margin-bottom:10px; text-align: center; color: red;" id="a">
+		<br>
+		<input style="margin-bottom:20px; text-align: center; color: red;" id="b">
+		<br>
+	<button style="color: purple;" onclick="resultado.innerText = Number(a.value) + Number(b.value)">Calcular</button>
+		<br>
+		<p style="color: lime;" id="resultado"></p>
+	</body>
+</html>
